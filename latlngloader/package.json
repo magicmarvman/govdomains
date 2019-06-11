@@ -9,6 +9,6 @@
     "nominatim-geocoder": "^0.1.4"
   },
   "scripts": {
-    "start": "node index.mjs"
+    "start": "node --experimental-modules index.mjs"
   }
 }
