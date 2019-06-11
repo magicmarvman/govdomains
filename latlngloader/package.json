@@ -2,5 +2,8 @@
   "name": "latlngloader",
   "version": "1.0.0",
   "main": "index.js",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "@google/maps": "^0.5.5"
+  }
 }
