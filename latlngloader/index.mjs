@@ -6,9 +6,9 @@ import secrets from "./../secrets.json";
 import Nominatim from 'nominatim-geocoder';
 const geocoder = new Nominatim()
 
-import domains, { forEach } from "./../domains.json";
+import domains from "./../domains.json";
 
-forEach((part, index, object) => {
+domains.forEach((part, index, object) => {
     geocoder.search( { q: object[index]["City"] + ', ' + object[index]["State"] } )
     .then((response) => {
         domains[index]["Latitude"] = response[0]["lat"]
