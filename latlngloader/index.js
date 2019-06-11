@@ -1,14 +1,14 @@
-const fs = require('fs')
-const chalk = require("chalk")
+import { writeFileSync } from 'fs';
+import chalk from "chalk";
 
-const secrets = require("./../secrets.json")
+import secrets from "./../secrets.json";
 
-const Nominatim = require('nominatim-geocoder')
+import Nominatim from 'nominatim-geocoder';
 const geocoder = new Nominatim()
 
-let domains = require("./../domains.json")
+import domains, { forEach } from "./../domains.json";
 
-domains.forEach((part, index, object) => {
+forEach((part, index, object) => {
     geocoder.search( { q: object[index]["City"] + ', ' + object[index]["State"] } )
     .then((response) => {
         domains[index]["Latitude"] = response[0]["lat"]
@@ -21,5 +21,5 @@ domains.forEach((part, index, object) => {
     })
 })
 
-fs.writeFileSync("domains.json", JSON.stringify(domains, null, 4))
+writeFileSync("domains.json", JSON.stringify(domains, null, 4))
 
