@@ -4,7 +4,7 @@ import chalk from "chalk";
 import Nominatim from 'nominatim-geocoder';
 const geocoder = new Nominatim()
 
-import domains from "./../domains.json";
+import domains from "./../domains_raw.json";
 
 domains.forEach((part, index, object) => {
     geocoder.search( { q: object[index]["City"] + ', ' + object[index]["State"] } )
@@ -20,6 +20,6 @@ domains.forEach((part, index, object) => {
 })
 
 console.log(chalk.yellow("Saving to file..."))
-writeFileSync("domains.json", JSON.stringify(domains, null, 4))
+writeFileSync("./../domains_final.json", JSON.stringify(domains, null, 4))
 console.log(chalk.green.bold("Done!"))
 

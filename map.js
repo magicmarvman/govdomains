@@ -2,7 +2,7 @@ let domains = null;
 let markers = [];
 
 function loadFromJson() {
-    fetch('domains.json')
+    fetch('domains_final.json')
         .then(function(response) {
             return response.json();
         })
