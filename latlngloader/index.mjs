@@ -1,8 +1,6 @@
 import { writeFileSync } from 'fs';
 import chalk from "chalk";
 
-import secrets from "./../secrets.json";
-
 import Nominatim from 'nominatim-geocoder';
 const geocoder = new Nominatim()
 
