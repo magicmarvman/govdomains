@@ -8,6 +8,7 @@ function loadFromJson() {
         })
         .then(function(jsonObj) {
             domains = jsonObj
+            console.log(domains)
         });
 }
 
