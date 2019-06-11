@@ -13,13 +13,11 @@ domains.forEach((part, index, object) => {
         domains[index]["Longitude"] = response[0]["lon"]
         domains[index]["OSM_Licence"] = response[0]["licence"]
         console.log(chalk.blue("Loading data ") + chalk.yellow(index) + chalk.blue(" of ") + chalk.yellow(domains.length) + chalk.blue("..."))
+        writeFileSync("./../domains_final.json", JSON.stringify(domains, null, 4))
     })
     .catch((error) => {
         console.log(error)
     })
 })
 
-console.log(chalk.yellow("Saving to file..."))
-writeFileSync("./../domains_final.json", JSON.stringify(domains, null, 4))
-console.log(chalk.green.bold("Done!"))
 
