@@ -45,7 +45,7 @@ function addMarkersByDomains() {
                     '</p>'+
                     '</div>'
                 });
-                markers[domains[index]["Domain Name"]].addListener(() => {
+                markers[domains[index]["Domain Name"]].addListener('click', () => {
                     markers[domains[index]["Domain Name"]].infowindow.open(map, markers[domains[index]["Domain Name"]])
                 })
             })
