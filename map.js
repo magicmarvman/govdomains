@@ -41,7 +41,7 @@ function addMarkersByDomains() {
                     '<b>Type:</b> ' + domains[index]["Domain Type"] + '<br>'+
                     '<b>Agency:</b> ' + domains[index]["Agency"] + '<br>'+
                     '<b>Organization:</b> ' + domains[index]["Organization"] + '<br>'+
-                    '<b>Location:</b> ' + domains[index]["City"] + ', ' + domains[index["State"]] + '<br>'+
+                    '<b>Location:</b> ' + domains[index]["City"] + ', ' + domains[index]["State"] + '<br>'+
                     '</p>'+
                     '</div>'
                 });
